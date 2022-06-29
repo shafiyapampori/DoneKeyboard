@@ -1,0 +1,16 @@
+PODS:
+  - DoneKeyboard (0.1.0)
+
+DEPENDENCIES:
+  - DoneKeyboard (from `../`)
+
+EXTERNAL SOURCES:
+  DoneKeyboard:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DoneKeyboard: 8e2c9a4b356c5a8ee3a340f2875390a5a553f563
+
+PODFILE CHECKSUM: e9f8d826e472af16b5e330478bf3d15625ed25c6
+
+COCOAPODS: 1.11.3
