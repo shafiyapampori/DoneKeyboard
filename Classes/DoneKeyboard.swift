@@ -183,7 +183,8 @@ extension UIViewController {
         let LoginButton: UIButton = {
             
             let button = UIButton()
-            button.setTitle("Login", for: .normal)
+            //button.setTitle("Login", for: .normal)
+            button.setTitle("SignIn", for: .normal)
             button.layer.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             button.layer.cornerRadius = 4
             button.layer.borderWidth = 2
