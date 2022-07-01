@@ -11,15 +11,19 @@ import DoneKeyboard
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ClickMe: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.RGDoneKeyboard(dismissOnTap: true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  
 
+    @IBAction func ClickMe(_ sender: Any) {
+        print("hello")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let destinationVC = storyboard.instantiateViewController(withIdentifier: "formVC")
+           self.navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }
 

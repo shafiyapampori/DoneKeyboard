@@ -17,26 +17,26 @@ extension UITextField{
             }
         }
     }
-
+    
     func addDoneButtonOnKeyboard()
     {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
-
+        
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
-
+        
         let items = [flexSpace, done]
         doneToolbar.items = items
         doneToolbar.sizeToFit()
-
+        
         self.inputAccessoryView = doneToolbar
     }
     
     @objc func doneButtonAction()
-      {
-          self.resignFirstResponder()
-      }
+    {
+        self.resignFirstResponder()
+    }
 }
 
 extension UITextView{
@@ -50,30 +50,30 @@ extension UITextView{
             }
         }
     }
-
+    
     func addDoneButtonOnKeyboard()
     {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
-
+        
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
-
+        
         let items = [flexSpace, done]
         doneToolbar.items = items
         doneToolbar.sizeToFit()
-
+        
         self.inputAccessoryView = doneToolbar
     }
     
     @objc func doneButtonAction()
-      {
-          self.resignFirstResponder()
-      }
+    {
+        self.resignFirstResponder()
+    }
 }
 
 extension UIViewController {
-
+    
     public func RGDoneKeyboard(dismissOnTap:Bool) {
         // Setup Keyboard observers
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -92,7 +92,7 @@ extension UIViewController {
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-
+    
     @objc func keyboardWillChange(notification: Notification) {
         var location: CGFloat = 0
         var tfvHeight: CGFloat = 0
@@ -146,19 +146,94 @@ extension UIViewController {
             view.frame.origin.y = 0
         }
     }
+    
+    public func showForm() {
+        let Label: UILabel = {
+            let lbl = UILabel()
+            lbl.text = "WELCOME"
+            lbl.font = UIFont(name: "Helvetica Neue", size: 40.0)
+            lbl.textAlignment = .center
+            lbl.textColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            
+            return lbl
+        }()
+        
+        let UserNameTextField: UITextField = {
+            let textfield = UITextField()
+            textfield.placeholder = " Email"
+            textfield.layer.borderWidth = 2
+            textfield.layer.cornerRadius = 10
+            textfield.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            textfield.layer.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 0.2339869619)
+            return textfield
+        }()
+        
+        let PasswordTextField: UITextField = {
+            let textfield = UITextField()
+            textfield.placeholder = " Password"
+            textfield.layer.borderWidth = 2
+            textfield.layer.cornerRadius = 10
+            textfield.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
+            textfield.layer.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 0.2339869619)
+            return textfield
+        }()
+        
+        
+        let LoginButton: UIButton = {
+            
+            let button = UIButton()
+            button.setTitle("Login", for: .normal)
+            button.layer.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+            button.layer.cornerRadius = 4
+            button.layer.borderWidth = 2
+            button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            
+            return button
+            
+        }()
+        
+        
+        view.addSubview(Label)
+        view.addSubview(UserNameTextField)
+        view.addSubview(PasswordTextField)
+        view.addSubview(LoginButton)
+        
+        Label.translatesAutoresizingMaskIntoConstraints = false
+        Label.topAnchor.constraint(equalTo: view.topAnchor,constant: 40.0).isActive = true
+        Label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        UserNameTextField.translatesAutoresizingMaskIntoConstraints = false
+        UserNameTextField.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
+        UserNameTextField.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
+        UserNameTextField.topAnchor.constraint(equalTo: Label.bottomAnchor,constant: 40.0).isActive = true
+        UserNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        PasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+        PasswordTextField.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
+        PasswordTextField.topAnchor.constraint(equalTo:UserNameTextField.bottomAnchor,constant: 40).isActive = true
+        PasswordTextField.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
+        PasswordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        LoginButton.translatesAutoresizingMaskIntoConstraints = false
+        LoginButton.topAnchor.constraint(equalTo: PasswordTextField.bottomAnchor, constant: 60).isActive = true
+        LoginButton.widthAnchor.constraint(equalToConstant: view.frame.size.width/2).isActive = true
+        LoginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        LoginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
 }
 
 extension UIResponder {
-
+    
     private static weak var _currentFirstResponder: UIResponder?
-
+    
     static var currentFirstResponder: UIResponder? {
         _currentFirstResponder = nil
         UIApplication.shared.sendAction(#selector(UIResponder.findFirstResponder(_:)), to: nil, from: nil, for: nil)
-
+        
         return _currentFirstResponder
     }
-
+    
     @objc func findFirstResponder(_ sender: Any) {
         UIResponder._currentFirstResponder = self
     }
