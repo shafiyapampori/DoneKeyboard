@@ -69,7 +69,7 @@
 		EFE22F4DB63BADC3EC3363AA42C87F5A /* DoneKeyboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DoneKeyboard-prefix.pch"; sourceTree = "<group>"; };
 		F07432C5DFDF3A13AE0D80C04C8114A6 /* DoneKeyboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DoneKeyboard-dummy.m"; sourceTree = "<group>"; };
 		F36D357D5E81DAAD5177513158CEC437 /* Pods-DoneKeyboard_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DoneKeyboard_Tests-Info.plist"; sourceTree = "<group>"; };
-		FCBB5D91CF1018C328753520424121B0 /* DoneKeyboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DoneKeyboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FCBB5D91CF1018C328753520424121B0 /* DoneKeyboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DoneKeyboard.podspec; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
